@@ -1,0 +1,13 @@
+# Secrets
+.env
+cacert.pem
+
+# Docker
+postgres_data/
+
+# Python
+__pycache__/
+*.pyc
+
+# OS
+.DS_Store
