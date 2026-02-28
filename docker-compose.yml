@@ -7,6 +7,9 @@ services:
       - .env
     volumes:
       - ./cacert.pem:/etc/ssl/certs/ca-certificates.crt:ro
+      # Mount cloudflared token dir so proxy can read tokens written by
+      # `cloudflared access login <URL>` without needing a container restart
+      - ${HOME}/.cloudflared:/root/.cloudflared:ro
     environment:
       - SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt
       - REQUESTS_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
