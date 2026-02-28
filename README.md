@@ -3,6 +3,23 @@
 LiteLLM gateway that proxies Claude Code and OpenAI requests through an OpenCode server
 protected by Cloudflare Access.
 
+## Architecture
+
+```
+                  ┌─── docker compose ──────────────────────────────────┐
+                  │                                                      │
+  Claude Code     │  ┌──────────┐   ┌──────────────────────────────┐   │   ┌──────────────────┐
+  OpenAI clients  │  │          │   │            proxy             │   │   │  Cloudflare      │
+  ───────────────▶│  │ LiteLLM  │──▶│  strips auth headers         │───┼──▶│  Access          │──▶ OpenCode
+       :4000      │  │  :4000   │   │  injects cf-access-token     │   │   │  (JWT validate)  │
+                  │  │          │   │            :8080              │   │   └──────────────────┘
+                  │  └──────────┘   └──────────────┬───────────────┘   │
+                  │  ┌──────────┐                  │ (volume mount)    │
+                  │  │ Postgres │   ~/.cloudflared/<host>-*-token       │
+                  │  └──────────┘   re-read on every request           │
+                  └──────────────────────────────────────────────────────┘
+```
+
 ## Quick Start
 
 ```bash
@@ -85,6 +102,6 @@ make setup       # Run interactive setup
 
 ## Available Models
 
-**Anthropic** (via port 8080): `claude-sonnet-4-20250514`, `claude-opus-4-5-20251101`, all claude-3.x variants
+**Anthropic**: `claude-sonnet-4-20250514`, `claude-opus-4-5-20251101`, all claude-3.x variants
 
-**OpenAI** (via port 8081): `gpt-4o`, `gpt-4o-mini`, `o1`, `o3`, `o3-mini`, `o4-mini`, and more
+**OpenAI**: `gpt-4o`, `gpt-4o-mini`, `o1`, `o3`, `o3-mini`, `o4-mini`, and more
