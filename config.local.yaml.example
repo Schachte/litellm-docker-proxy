@@ -1,0 +1,208 @@
+# LiteLLM model config
+# All requests route through the proxy sidecar to opencode serve on the host.
+#
+# Usage:
+#   1. Start opencode:   opencode serve --port 4096
+#   2. Start the stack:  make up
+
+model_list:
+  # ── Anthropic ────────────────────────────────────────────────────────────────
+  - model_name: claude-3-haiku-20240307
+    litellm_params:
+      model: anthropic/claude-3-haiku-20240307
+      api_base: http://proxy:8080
+      api_key: not-used
+
+  - model_name: claude-opus-4-0
+    litellm_params:
+      model: anthropic/claude-opus-4-0
+      api_base: http://proxy:8080
+      api_key: not-used
+
+  - model_name: claude-opus-4-1-20250805
+    litellm_params:
+      model: anthropic/claude-opus-4-1-20250805
+      api_base: http://proxy:8080
+      api_key: not-used
+
+  - model_name: claude-opus-4-20250514
+    litellm_params:
+      model: anthropic/claude-opus-4-20250514
+      api_base: http://proxy:8080
+      api_key: not-used
+
+  - model_name: claude-opus-4-5
+    litellm_params:
+      model: anthropic/claude-opus-4-5
+      api_base: http://proxy:8080
+      api_key: not-used
+
+  - model_name: claude-opus-4-5-20251101
+    litellm_params:
+      model: anthropic/claude-opus-4-5-20251101
+      api_base: http://proxy:8080
+      api_key: not-used
+
+  - model_name: claude-opus-4-6
+    litellm_params:
+      model: anthropic/claude-opus-4-6
+      api_base: http://proxy:8080
+      api_key: not-used
+
+  - model_name: claude-sonnet-4-5
+    litellm_params:
+      model: anthropic/claude-sonnet-4-5
+      api_base: http://proxy:8080
+      api_key: not-used
+
+  - model_name: claude-sonnet-4-5-20250929
+    litellm_params:
+      model: anthropic/claude-sonnet-4-5-20250929
+      api_base: http://proxy:8080
+      api_key: not-used
+
+  - model_name: claude-sonnet-4-6
+    litellm_params:
+      model: anthropic/claude-sonnet-4-6
+      api_base: http://proxy:8080
+      api_key: not-used
+
+  # ── Google Gemini ────────────────────────────────────────────────────────────
+  - model_name: gemini-2.5-flash
+    litellm_params:
+      model: openai/gemini-2.5-flash
+      api_base: http://proxy:8080
+      api_key: not-used
+
+  - model_name: gemini-2.5-pro
+    litellm_params:
+      model: openai/gemini-2.5-pro
+      api_base: http://proxy:8080
+      api_key: not-used
+
+  - model_name: gemini-3-flash-preview
+    litellm_params:
+      model: openai/gemini-3-flash-preview
+      api_base: http://proxy:8080
+      api_key: not-used
+
+  - model_name: gemini-3-pro-preview
+    litellm_params:
+      model: openai/gemini-3-pro-preview
+      api_base: http://proxy:8080
+      api_key: not-used
+
+  - model_name: gemini-3.1-pro-preview
+    litellm_params:
+      model: openai/gemini-3.1-pro-preview
+      api_base: http://proxy:8080
+      api_key: not-used
+
+  # ── OpenAI ───────────────────────────────────────────────────────────────────
+  - model_name: gpt-4.1
+    litellm_params:
+      model: openai/gpt-4.1
+      api_base: http://proxy:8080
+      api_key: not-used
+
+  - model_name: gpt-4.1-mini
+    litellm_params:
+      model: openai/gpt-4.1-mini
+      api_base: http://proxy:8080
+      api_key: not-used
+
+  - model_name: gpt-4.1-nano
+    litellm_params:
+      model: openai/gpt-4.1-nano
+      api_base: http://proxy:8080
+      api_key: not-used
+
+  - model_name: gpt-4o
+    litellm_params:
+      model: openai/gpt-4o
+      api_base: http://proxy:8080
+      api_key: not-used
+
+  - model_name: gpt-4o-2024-05-13
+    litellm_params:
+      model: openai/gpt-4o-2024-05-13
+      api_base: http://proxy:8080
+      api_key: not-used
+
+  - model_name: gpt-4o-2024-08-06
+    litellm_params:
+      model: openai/gpt-4o-2024-08-06
+      api_base: http://proxy:8080
+      api_key: not-used
+
+  - model_name: gpt-4o-2024-11-20
+    litellm_params:
+      model: openai/gpt-4o-2024-11-20
+      api_base: http://proxy:8080
+      api_key: not-used
+
+  - model_name: gpt-5-mini
+    litellm_params:
+      model: openai/gpt-5-mini
+      api_base: http://proxy:8080
+      api_key: not-used
+
+  - model_name: gpt-5.1
+    litellm_params:
+      model: openai/gpt-5.1
+      api_base: http://proxy:8080
+      api_key: not-used
+
+  - model_name: gpt-5.1-chat-latest
+    litellm_params:
+      model: openai/gpt-5.1-chat-latest
+      api_base: http://proxy:8080
+      api_key: not-used
+
+  - model_name: gpt-5.2
+    litellm_params:
+      model: openai/gpt-5.2
+      api_base: http://proxy:8080
+      api_key: not-used
+
+  - model_name: gpt-5.4
+    litellm_params:
+      model: openai/gpt-5.4
+      api_base: http://proxy:8080
+      api_key: not-used
+
+  - model_name: o1
+    litellm_params:
+      model: openai/o1
+      api_base: http://proxy:8080
+      api_key: not-used
+
+  - model_name: o3-mini
+    litellm_params:
+      model: openai/o3-mini
+      api_base: http://proxy:8080
+      api_key: not-used
+
+  - model_name: o4-mini
+    litellm_params:
+      model: openai/o4-mini
+      api_base: http://proxy:8080
+      api_key: not-used
+
+  # ── Workers AI (Cloudflare) ──────────────────────────────────────────────────
+  - model_name: kimi-k2.5
+    litellm_params:
+      model: openai/@cf/moonshotai/kimi-k2.5
+      api_base: http://proxy:8080
+      api_key: not-used
+
+  - model_name: glm-4.7-flash
+    litellm_params:
+      model: openai/@cf/zai-org/glm-4.7-flash
+      api_base: http://proxy:8080
+      api_key: not-used
+
+general_settings:
+  master_key: os.environ/LITELLM_MASTER_KEY
+  ui_username: os.environ/UI_USERNAME
+  ui_password: os.environ/UI_PASSWORD
