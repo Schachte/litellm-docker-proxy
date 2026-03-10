@@ -1,6 +1,15 @@
 # Secrets
 .env
+.env.bak
 cacert.pem
+cloudflared-credentials.json
+cloudflared-config.yml
+config.local.yaml
+config.tunnel.yaml
+
+# Runtime
+.opencode.pid
+/tmp/opencode-serve.log
 
 # Docker
 postgres_data/
@@ -11,3 +20,7 @@ __pycache__/
 
 # OS
 .DS_Store
+
+# Test artifacts
+test.pblite
+.test.pb*
